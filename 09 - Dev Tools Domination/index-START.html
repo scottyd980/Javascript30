@@ -17,29 +17,63 @@
       p.style.fontSize = '50px';
     }
 
+    const p = document.querySelector('p');
+
     // Regular
+    console.log("hello");
 
     // Interpolated
+    console.log("hello I am a %s string", "poop");
 
     // Styled
+    //console.log("%c I am some great text", "font-size:50px; background: red; text-shadow: 10px 10px 0 blue");
 
     // warning!
+    console.warn("OH NOOO");
 
     // Error :|
+    console.error("Shit");
 
     // Info
+    console.info("Crocodiles eat 3-4 people per year");
 
     // Testing
+    // Only shows if the assertion is wrong
+    console.assert(1 === 2, "that's wrong");
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    console.clear();
+    dogs.forEach((dog) => {
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('Scott');
+    console.count('Scott');
+    console.count('Scott');
+    console.count('Scott');
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/scottyd980').then((data) => {
+      return data.json()
+    }).then((data) => {
+      console.timeEnd('fetching data');
+      console.log(data);
+    });
+
+    console.table(dogs);
 
   </script>
 </body>
